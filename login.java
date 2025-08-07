@@ -51,21 +51,18 @@ public class login {
     }
 
     public static void REGIS() {
+        String REGname, REGpassw;
         System.out.println("\n\n" + String.format("%75s", "==============================="));
         System.out.println(String.format("%68s", "[  REGISTRATION  ]"));
         System.out.println(String.format("%75s", "==============================="));
         System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
-
         System.out.print("\n" + String.format("%54s", "Enter your full name: "));
-        String name = scanner.nextLine();
-
+        REGname = scanner.nextLine();
         System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
         System.out.print("\n" + String.format("%54s", "Create your password: "));
-        String passw = scanner.nextLine();
-
-        usersD.add(new UserDC(name, passw));
+        REGpassw = scanner.nextLine();
+        usersD.add(new UserDC(REGname, REGpassw));
         SAVEDFILES();
-
         System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
         System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
         System.out.println(String.format("%74s", "[  REGISTRATION SUCCESSFUL  ]"));
@@ -78,21 +75,16 @@ public class login {
             String LOGINpass = "";
             boolean USERHANDLING = false;
             boolean PASSHANDLING = false;
-
             System.out.println("\n\n" + String.format("%75s", "==============================="));
             System.out.println(String.format("%66s", "[  LOG - IN  ]"));
             System.out.println(String.format("%75s", "==============================="));
             System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
-
             System.out.print("\n" + String.format("%54s", "Enter your full name: "));
             LOGINname = scanner.nextLine();
-
             System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
             System.out.print("\n" + String.format("%54s", "Enter your password: "));
             LOGINpass = scanner.nextLine();
-
             System.out.println("\n" + String.format("%88s", "--------------------------------------------------------"));
-
             for (UserDC user : usersD) {
                 if (user.name.equals(LOGINname)) {
                     USERHANDLING = true;
@@ -130,7 +122,6 @@ public class login {
             System.out.println(String.format("%82s", "============================================"));
             System.out.println("\n" + String.format("%48s", "1. Return"));
             System.out.println(String.format("%88s", "--------------------------------------------------------"));
-
             System.out.print("\n\n" + String.format("%39s", "Enter: "));
             int choice;
             try {
@@ -138,7 +129,6 @@ public class login {
             } catch (NumberFormatException e) {
                 choice = -1;
             }
-
             if (choice == 1) {
                 return;
             } else {
