@@ -71,10 +71,12 @@ public class login {
 
     public static void LOGIN() {
         while (true) {
-            String LOGINname = "";
-            String LOGINpass = "";
-            boolean USERHANDLING = false;
-            boolean PASSHANDLING = false;
+            String LOGINname, LOGINpass;
+            boolean USERHANDLING, PASSHANDLING;
+            LOGINname = "";
+            LOGINpass = "";
+            USERHANDLING = false;
+            PASSHANDLING = false;
             System.out.println("\n\n" + String.format("%75s", "==============================="));
             System.out.println(String.format("%66s", "[  LOG - IN  ]"));
             System.out.println(String.format("%75s", "==============================="));
@@ -117,13 +119,13 @@ public class login {
 
     public static void HOMESCR() {
         while (true) {
+            int choice;
             System.out.println("\n\n" + String.format("%82s", "============================================"));
             System.out.println(String.format("%73s", "[  WELCOME  " + REGISname + " ]"));
             System.out.println(String.format("%82s", "============================================"));
             System.out.println("\n" + String.format("%48s", "1. Return"));
             System.out.println(String.format("%88s", "--------------------------------------------------------"));
             System.out.print("\n\n" + String.format("%39s", "Enter: "));
-            int choice;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
